@@ -1,31 +1,23 @@
-import React from "react";
- 
-import Header from "./components/Header";
-import "./style.css";
-import SmallHeading from "./components/SmallHeading"
-
-import TodoItem from "./components/TodoItem";
-import Button from "./components/Button";
- 
+import React, { useState, useEffect } from "react";
+import { getPosts } from "./api";
+import "./App.css";
 
 const App = () => {
-   return (
-     <div > <Header header="Todoie App"/>
-     <div className="todo-container">
-        <SmallHeading title="Todo"/>
-        <TodoItem  text = "Eat"/>
-        <TodoItem completed={true} text = "sleep" />
-        <TodoItem text = "study"/>
-        <TodoItem  text = "Dance"/>
-        <TodoItem text = "pubg"/>
-        <TodoItem text =  "walking"/>
-        <TodoItem text = "coding"/>  
-        <TodoItem text = "again sleep"/>
-        <Button/>
-       
-     </div></div>
-   // props are just the parameters in the function is used to create the dynamic components 
-   );
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getPosts().then((posts) => setData(posts));
+  }, []);
+
+  return (
+    <div className="App">
+      {
+        data
+          ? data.map((e) => <li key={e.id}>{e.title}</li>)
+          : <p>No data</p>
+      }
+    </div>
+  );
 };
 
 export default App;
