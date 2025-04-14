@@ -16,10 +16,13 @@ const App = () => {
      getRandomUser().then((user) => setUserData(user.results[0]))
   },[]);
 
-  console.log(userData)
+  const refresh = () => {
+     getRandomUser().then((user) => setUserData(user.results[0]))
+  };
 
   return (
     <div className="App">
+      <button onClick={refresh}>Refresh User</button>
      { userData &&  <UserCard data={userData}/>} 
       {
        
