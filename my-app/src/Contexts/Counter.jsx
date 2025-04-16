@@ -6,7 +6,7 @@ import {createContext,useState} from 'react'
 
     const [count,setCount] = useState(0);
      return (
-        <ConterContext.Provider value = {{ count }}>
+        <ConterContext.Provider value = {{ count,setCount    }}>
             {props.children}
         </ConterContext.Provider>
      )
