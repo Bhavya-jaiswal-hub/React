@@ -1,6 +1,10 @@
  import React from "react";
- const Button = () => {
-     return <button className="button">Add Todo</button>
+ const Button = (props) => {
+    return (
+        <button className="btn" onClick= { props.value} >
+           {props.value}
+        </button>
+    )
  }
         
 export default Button;
