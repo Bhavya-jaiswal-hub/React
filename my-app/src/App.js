@@ -8,12 +8,16 @@ import Input from './components/Input'
 // import Cart from './components/Cart';
 // import { useContext } from 'react';
 import "./App.css";
+import { useWeather } from './Context/Weather';
 // import Counter from './components/Counter';
 // import { ConterContext}  from "./Contexts/Counter"
 // import PostCard from "./components/PostCard";
 // import UserCard from "./components/UserCard";
 
 const App = () => {
+
+  const weather = useWeather();
+  console.log(weather)
   // const counterState = useContext(ConterContext)
   // const [data, setData] = useState(null);
   // const [userData,setUserData] = useState(null);
@@ -48,7 +52,7 @@ const App = () => {
        <h1> Weather forcast</h1>
        <Input/>
        <br></br>
-       <Button value="Search"/>
+       <Button onClick={weather.fetchData} value="Search"/>
        <Card/>
        <Button value="Refresh"/>
   
