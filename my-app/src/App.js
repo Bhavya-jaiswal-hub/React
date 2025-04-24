@@ -1,14 +1,14 @@
 // import React, { useState, useEffect } from "react";
 // import { getPosts,getRandomUser } from "./api";
 import React from 'react'
-import Card from './components/Card'
-import Button from './components/Button'
-import Input from './components/Input'
+// import Card from './components/Card'
+// import Button from './components/Button'
+// import Input from './components/Input'
 // import Item from './components/Item';
 // import Cart from './components/Cart';
 // import { useContext } from 'react';
-import "./App.css";
-import { useWeather } from './Context/Weather';
+// import "./App.css";
+// import { useWeather } from './Context/Weather';
 // import Counter from './components/Counter';
 // import { ConterContext}  from "./Contexts/Counter"
 // import PostCard from "./components/PostCard";
@@ -16,8 +16,8 @@ import { useWeather } from './Context/Weather';
 
 const App = () => {
 
-  const weather = useWeather();
-  console.log(weather)
+  // const weather = useWeather();
+  // console.log(weather)
   // const counterState = useContext(ConterContext)
   // const [data, setData] = useState(null);
   // const [userData,setUserData] = useState(null);
@@ -49,14 +49,13 @@ const App = () => {
        <Counter/>
        <Counter/> */}
 
-       <h1> Weather forcast</h1>
-       <Input/>
-       <br></br>
-       <Button onClick={weather.fetchData} value="Search"/>
+       {/* <h1> Weather forcast</h1> */}
+       {/* <Input/> */}
+       {/* <br></br> */}
+       {/* <Button onClick={weather.fetchData} value="Search"/>
        <Card/>
-       <Button value="Refresh"/>
-  
-
+       <Button value="Refresh"/> */}
+    <h1> React Router</h1>
     </div>
   );
 };

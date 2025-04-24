@@ -1,5 +1,5 @@
 import React from 'react';
-import { useWeather } from "../Context/Weather";
+// import { useWeather } from "../Context/Weather";
 
 const Input = () => {
   const weather = useWeather();
