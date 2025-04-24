@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState }from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-import {BrowserRouter,Routes,Route} from "react-router-dom"
+import {BrowserRouter,Routes,Route,useParams,NavLink} from "react-router-dom"
 
 
 // import { CartProvider } from './Context/Cart';
@@ -15,11 +15,62 @@ import {BrowserRouter,Routes,Route} from "react-router-dom"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const Home = () => {
+
+  const [posts,setPosts] =useState([])
+
+  useEffect(()=> {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((data) => data.json())
+    .then((data) => setPosts(data));
+
+  },[])
    return (
-    <div>
-   <h1> HOME PAGE </h1>
+    <div className='post-container'>
+    {
+       posts.map((post) => ({ <NavLink to={'/post'}>post.title} </NavLink>) )
+    }
     </div>
     
+   )
+}
+
+const About = () => {
+   return (
+    <div>
+     <h1> 
+      About Page
+     </h1>
+    </div>
+   )
+}
+
+const Profile = () => {
+   return (
+    <div>
+      <h1>
+        settings 
+      </h1>
+    </div>
+   )
+}
+
+const Settings = () => {
+   return (
+    <div>
+      <h1>
+        sex karne ka bahut shok h mujhe 
+      </h1>
+    </div>
+   )
+}
+
+const UserName = () => {
+
+  const params = useParams();
+   return (
+     <div>
+      <h1> Your name is {params.UserId}</h1>
+     </div>
    )
 }
 root.render(
@@ -27,6 +78,15 @@ root.render(
    <BrowserRouter>
    <Routes>
      <Route path="/" element={<Home />} />
+     <Route path="/about" element={<About />} />
+     <Route path ="/aboutUser/:UserId"  element={ <UserName />} /> 
+      {/* <Route path="/account/profile"  element={<Profile />} /> */}
+     <Route path="account">
+      <Route path="profile"  element = {<Profile />} />
+      <Route path="sextalk"  element = { <Settings/>} />
+
+     </Route>
+
    </Routes>
    {/* <App/> */}
    </BrowserRouter>
