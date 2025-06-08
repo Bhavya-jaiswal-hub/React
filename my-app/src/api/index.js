@@ -1,6 +1,16 @@
-const baseURL = "https://api.weatherapi.com/v1/current.json?key=0314e96146d5491698b63836252004";
+ export  const getPosts = async() => {
+     const response  = await fetch('https://jsonplaceholder.typicode.com/posts',{
+          method: 'GEt',
 
-export const getWeatherDataForCity = async (city) => {
-  const response = await fetch(`${baseURL}&q=${city}&aqi=yes`); // Use backticks here
-  return await response.json();
-};
+     });
+
+     return await response.json();
+}
+
+export const getRandomUser = async() => {
+     const response = await fetch('https://randomuser.me/api/',{
+        method: 'GET',
+     });
+
+     return await response.json();
+}
