@@ -23,3 +23,9 @@
     border: 10px solid red;
     border-radius: 10px;
 }
+.App{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }

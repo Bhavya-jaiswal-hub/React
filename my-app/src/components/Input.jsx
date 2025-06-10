@@ -1,20 +1,13 @@
 import React from 'react';
 // import { useWeather } from "../Context/Weather";
 
-const Input = () => {
-  const weather = useWeather();
+const Input  =(props) =>   {
+    return (
+      <div>
+        <input placeholder = {props.placeholder} value = {props.value} onChange = {props.onChange}  />
+      </div>
+    )
+}   
 
-  // optional: safeguard in case context is not provided
-  if (!weather) return null;
-
-  return (
-    <input
-      className='input'
-      placeholder='Search here'
-      value={weather.searchCity}
-      onChange={(e) => weather.setSearchCity(e.target.value)}
-    />
-  );
-};
 
 export default Input;
