@@ -13,4 +13,4 @@ export const getRandomUser = async() => {
      });
 
      return await response.json();
-}
+}   
