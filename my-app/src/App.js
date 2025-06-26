@@ -2,6 +2,7 @@
 //  import {getDatabase ,ref,set} from "firebase/database"
 // import {getAuth , createUserWithEmailAndPassword} from "firebase/auth"
 import Signup from "./pages/signuppage";
+import Signin from "./pages/signin";
 //  import {app}  from  "./firebase"
  // import {useState,useEffect}  from 'react';
 // import UserCard  from './components/UserCard';
@@ -46,6 +47,7 @@ const App = () => {
        {/* <h1> Firebase project  </h1> 
        <button className="btn" onClick={signupUser}>create user</button>  */}
        <Signup/>
+       <Signin/>
      {/* <Input placeholder="search the country" />
      <Card /> */}
       {/* {userdata &&  <UserCard data={userdata} /> }
