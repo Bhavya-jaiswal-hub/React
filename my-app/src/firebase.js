@@ -1,13 +1,14 @@
-import {initializeApp} from "firebase/app";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBo7Cj9M9O9emIT2dsQWtcdAe_HhZ6pVBc",
-  authDomain: "app-a7123.firebaseapp.com",
-  projectId: "app-a7123",
-  storageBucket: "app-a7123.firebasestorage.app",
-  messagingSenderId: "325886531721",
-  appId: "1:325886531721:web:5c117ddab66504179a8e58",
-  databaseURL: "https://app-a7123-default-rtdb.firebaseio.com",
-};
+  apiKey: "AIzaSyCm5vy8JHNPnNZ-p6cPrAjMK_21GVLwhlw",
+  authDomain: "learning-project-57699.firebaseapp.com",
+  projectId: "learning-project-57699",
+  storageBucket: "learning-project-57699.firebasestorage.app",
+  messagingSenderId: "135341639778",
+  appId: "1:135341639778:web:97954d51767b083f10a93b",
+  databaseURL: "https://learning-project-57699-default-rtdb.firebaseio.com"
+};  
 
- export const app = initializeApp(firebaseConfig);
+
+export const app = initializeApp( firebaseConfig );

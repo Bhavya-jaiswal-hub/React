@@ -1,8 +1,11 @@
 // import {getPosts,getRandomUser}  from './api'
 //  import {getDatabase ,ref,set} from "firebase/database"
 // import {getAuth , createUserWithEmailAndPassword} from "firebase/auth"
-import Signup from "./pages/signuppage";
-import Signin from "./pages/signin";
+// import {getDatabase,set,ref} from "firebase/database"
+// import {app} from "./firebase"
+import Signup from "./pages/Signup"
+// import { getAuth,createUserWithEmailAndPassword } from "firebase/auth"; 
+
 //  import {app}  from  "./firebase"
  // import {useState,useEffect}  from 'react';
 // import UserCard  from './components/UserCard';
@@ -15,7 +18,10 @@ import './App.css'
 // import Board from "./TicTacToeGame/Board";
 // const db = getDatabase(app) // this db will give you the instance of the database of the firebase 
 const App = () => {
+ 
+//  const db = getDatabase(app)
 
+  //  const Auth = getAuth(app)
  
     // const signupUser  = () => {
     //    createUserWithEmailAndPassword(auth,"bhavyajaiswal71@gmai.com","bhav@1234").then((value) => console.log(value));
@@ -41,13 +47,32 @@ const App = () => {
     //      name: "bhavya jaiswal",
     //      age: 21,
     //    });
-    // };
+    // }; 
+          //  const putData = () => {
+          //   set(ref(db,"users/bhavya") , {
+          //     college: "Mohit Kumar garg engineering college",
+          //     id: 1, 
+          //     Name: "Bhavya jaiswal",
+          //     age: 21,
+
+          //   })   
+
+          //  }
+
+          // const createUser = () => {
+          //    createUserWithEmailAndPassword(Auth, "bhavyajaiswal71@gmail.com", "bhav@1234").then((value) => console.log(value))
+          // }
+
   return (
     <div className="App">
+        <h1> Firebase start</h1>
+         <Signup />
+        {/* <button  onClick={createUser}>Create User</button> */}
+
+       {/* <button onClick={putData}>Put Data</button> */}
        {/* <h1> Firebase project  </h1> 
        <button className="btn" onClick={signupUser}>create user</button>  */}
-       <Signup/>
-       <Signin/>
+      
      {/* <Input placeholder="search the country" />
      <Card /> */}
       {/* {userdata &&  <UserCard data={userdata} /> }
