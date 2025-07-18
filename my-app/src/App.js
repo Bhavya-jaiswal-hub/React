@@ -3,13 +3,14 @@
 // import {getAuth , createUserWithEmailAndPassword} from "firebase/auth"
 // import {getDatabase,set,ref} from "firebase/database"
 // import {app} from "./firebase"
-import Signup from "./pages/Signup"
-import Signin from "./pages/Signin";
+// import Signup from "./pages/Signup"
+// import Signin from "./pages/Signin";
 // import { getAuth,createUserWithEmailAndPassword } from "firebase/auth"; 
 
 //  import {app}  from  "./firebase"
- // import {useState,useEffect}  from 'react';
+ import {useState}  from 'react';
 // import UserCard  from './components/UserCard';
+import {useFirebase} from "./Context/Firebase"
 import './App.css'
 
 //  const auth = getAuth(app);
@@ -20,7 +21,10 @@ import './App.css'
 // const db = getDatabase(app) // this db will give you the instance of the database of the firebase 
 function App() {
   //  const db = getDatabase(app)
-
+  const firebase = useFirebase();
+ 
+   const [email,setEmail] = useState("")
+   const [password,setPassword] = useState("")
   //  const Auth = getAuth(app)
   // const signupUser  = () => {
   //    createUserWithEmailAndPassword(auth,"bhavyajaiswal71@gmai.com","bhav@1234").then((value) => console.log(value));
@@ -57,8 +61,19 @@ function App() {
   return (
     <div className="App">
       <h1> Firebase start</h1>
-      <Signup />
-      <Signin />
+      <h3> sign up </h3>
+      <label>Enter your email:</label>
+      <input type="email" placeholder="Enter your email here" onChange={(e) =>setEmail(e.target.value)} value={email}   />
+      <br></br>
+      <label>set the password:</label>
+      <input type='password' placeholder='Enter the password here' onChange={(e) => setPassword(e.target.value)} value={password} />
+      <button onClick={() => {
+        firebase.signupUserWithEmailAndPassword(email,password)
+      }}>
+        Create User
+      </button>
+      {/* <Signup /> 
+      <Signin /> */}
       {/* <button  onClick={createUser}>Create User</button> */}
 
       {/* <button onClick={putData}>Put Data</button> */}

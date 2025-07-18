@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ReactDOM from 'react-dom/client';
+import { FirebaseProvider } from './Context/Firebase';
 // import { BrowserRouter,Routes,Route,useParams } from 'react-router-dom';
 import App from './App';
 import './index.css'; // Optional: if you want to use global CSS styles
@@ -58,22 +59,27 @@ root.render(
   
    
     <React.StrictMode>
+     <FirebaseProvider> 
 
- {/* <BrowserRouter>
+        <App /> 
+   
+     </FirebaseProvider>
+      </React.StrictMode>
+
+ /* <BrowserRouter>
  <Routes>
   <Route path='/' element = {<Home />} />
    <Route path='/about' element = {<About />} />
-    {/* <Route path='/about/profile' element = {<Profile />} /> this is one way of doing routing  */}
-    {/* <Route path="about">
+    {/* <Route path='/about/profile' element = {<Profile />} /> this is one way of doing routing  */
+    /* <Route path="about">
      <Route path="profile"  element={<Profile />} />
      <Route path = "profile/settings" element = {<Settings />} />
-    </Route> */}
-    {/* <Route path="/user/:userId" element={<SayUser />} /> */}
- {/* </Routes> */}
+    </Route> */
+    /* <Route path="/user/:userId" element={<SayUser />} /> */
+ /* </Routes> */
 
- {/* </BrowserRouter> */} 
- <App /> 
-    </React.StrictMode>
+ /* </BrowserRouter> */ 
+
      
   
 );
