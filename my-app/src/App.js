@@ -71,7 +71,9 @@ function App() {
         firebase.signupUserWithEmailAndPassword(email,password)
       }}>
         Create User
-      </button>
+      </button>  
+
+      <button onClick={firebase.signupWithGoogle}>sign up with Google</button>
       {/* <Signup /> 
       <Signin /> */}
       {/* <button  onClick={createUser}>Create User</button> */}
